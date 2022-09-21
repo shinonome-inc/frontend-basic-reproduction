@@ -22,10 +22,10 @@
       </div>
     </header>
     <main>
-      <section class="hero">
+      <section class="hero" id="hero">
         <h1 class="title">フロントエンドコース</h1>
       </section>
-      <section class="about">
+      <section class="about" id="about">
         <div class="container">
           <div class="explanation">
             <h2>About</h2>
@@ -36,7 +36,7 @@
           </div>
         </div>
       </section>
-      <section class="curriculum">
+      <section class="curriculum" id="curriculum">
         <div class="container">
           <div class="explanation">
             <h2>Curriculum</h2>
@@ -89,15 +89,37 @@
           </div>
         </div>
       </section>
+      <section class="contact" id="contact">
+        <div class="container">
+          <h2>Contact</h2>
+          <form action="https://example.com" method="post">
+            <div class="title input-wrapper">
+              <label for="title">件名</label>
+              <input type="text" id="title" name="title" />
+            </div>
+            <div class="mail input-wrapper">
+              <label for="mail">メールアドレス</label>
+              <input type="text" id="mail" name="mail" />
+            </div>
+            <div class="content input-wrapper">
+              <label for="content">内容</label>
+              <textarea id="content" name="content" rows="5"></textarea>
+            </div>
+            <div class="button-wrapper">
+              <button type="submit" class="button">送信</button>
+            </div>
+          </form>
+        </div>
+      </sections>
     </main>
     <footer>
       <div class="container">
         <img src="./img/logo_white.svg" alt="Frontend" />
         <nav class="sitemap">
           <ul>
-            <li><a href="#">トップページ</a></li>
-            <li><a href="#">カリキュラム</a></li>
-            <li><a href="#">お問い合わせ</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#curriculum">Curriculum</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
         <small class="copyright">©︎ 2022 Frontend Inc.</small>
