@@ -1,22 +1,30 @@
+<!-- VSCodeではEmmetが使えるので、"!"と入力すればある程度の雛形を生成することができる -->
+<!-- HTML5の文書であることの宣言 -->
 <!DOCTYPE html>
 <html lang="ja">
   <head>
+    <!-- 世界的に最も普及している文字コードで、これを設定しておけば基本的に問題ない -->
     <meta charset="UTF-8" />
+    <!-- Internet Explorerを使っている場合、利用可能な中で最新のバージョンで表示してね という指定 -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 表示領域を画面の幅に合わせる メディアクエリを使ってレスポンシブ対応する際には必須の記述 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ページのタイトル ブラウザのタブなどに表示される題名を定義する -->
     <title>フロントエンドコース中間課題</title>
-    <link rel="stylesheet" href="./style.css" />
+    <!-- GoogleFontsの読み込み -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet"
     />
+    <!-- 自作のスタイルシートの読み込み -->
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <header>
       <div class="container">
-        <a href="#">
+        <a href="#top">
           <img src="./img/logo_black.svg" alt="Frontend" />
         </a>
       </div>
