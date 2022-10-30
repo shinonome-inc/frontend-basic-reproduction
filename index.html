@@ -1,0 +1,137 @@
+<!-- VSCodeではEmmetが使えるので、"!"と入力すればある程度の雛形を生成することができる -->
+<!-- HTML5の文書であることの宣言 -->
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- 世界的に最も普及している文字コードで、これを設定しておけば基本的に問題ない -->
+    <meta charset="UTF-8" />
+    <!-- Internet Explorerを使っている場合、利用可能な中で最新のバージョンで表示してね という指定 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 表示領域を画面の幅に合わせる メディアクエリを使ってレスポンシブ対応する際には必須の記述 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ページのタイトル ブラウザのタブなどに表示される題名を定義する -->
+    <title>フロントエンドコース中間課題</title>
+    <!-- GoogleFontsの読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet"
+    />
+    <!-- 自作のスタイルシートの読み込み -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="#top">
+          <img src="./img/logo_black.svg" alt="Frontend" />
+        </a>
+      </div>
+    </header>
+    <main>
+      <section class="hero" id="hero">
+        <h1 class="title">フロントエンドコース</h1>
+      </section>
+      <section class="about" id="about">
+        <div class="container">
+          <div class="explanation">
+            <h2>About</h2>
+            <p class="section-content">
+              フロントエンドコースでは、webサイトやwebアプリにおいて実際にユーザーの目に触れる部分を作成する方法を学習していきます。<br />
+              コース内では基本的な事項の紹介にとどめているので、早めに終了して個人開発や案件に挑戦してみてください。
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="curriculum" id="curriculum">
+        <div class="container">
+          <div class="explanation">
+            <h2>Curriculum</h2>
+            <p class="section-content">
+              webフロントエンドの基礎から、最新のUIライブラリまでを一通り学習します。<br />
+              コースを修了すれば案件に挑戦する基礎的なスキルセットが身につくようになっています。
+            </p>
+          </div>
+          <div class="cards">
+            <div class="card">
+              <img src="./img/html.png" alt="html5のロゴ" />
+              <div class="body">
+                <h3>HTML & CSS</h3>
+                <p>
+                  HTML（HyperText Markup
+                  Language）は、webページの構造や内容を作るためのマークアップ言語です。<br />
+                  CSS（Cascading Style Sheets）は HTML
+                  で記述されたページの見た目を整えるためのスタイルシート言語です。<br />
+                  この2つをマスターすることで、基本的なwebサイトが作れるようになります。
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="./img/github.png" alt="githubのロゴ" />
+              <div class="body">
+                <h3>Git & Github</h3>
+                <p>
+                  gitは、現在最も広く使われているバージョン管理ツールであり、
+                  github は git
+                  を用いてソースコードをホスティングするためのプラットフォームです。<br />
+                  現在、チーム開発をする上で git および github
+                  の知識は必須のものとなっています。
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="./img/react.png" alt="reactのロゴ" />
+              <div class="body">
+                <h3>React</h3>
+                <p>
+                  Meta（旧facebook）によって開発されているJavascriptライブラリです。<br />
+                  web上で動作する SPA(Single Page Application)
+                  を開発する上でのベースになるほか、ネイティブアプリやモバイルアプリの開発にも応用できるという懐の広さが特徴です。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="button-wrapper">
+            <a href="#" class="button">もっと見る</a>
+          </div>
+        </div>
+      </section>
+      <section class="contact" id="contact">
+        <div class="container">
+          <h2>Contact</h2>
+          <form action="https://example.com" method="post">
+            <div class="title input-wrapper">
+              <label for="title">件名</label>
+              <input type="text" id="title" name="title" placeholder="定例会について"/>
+            </div>
+            <div class="mail input-wrapper">
+              <label for="mail">メールアドレス</label>
+              <input type="text" id="mail" name="mail" placeholder="example@gmail.com"/>
+            </div>
+            <div class="content input-wrapper">
+              <label for="content">内容</label>
+              <textarea id="content" name="content" rows="5" placeholder="定例会の日にバイトが入っていて参加できそうにありません。"></textarea>
+            </div>
+            <div class="button-wrapper">
+              <button type="submit" class="button">送信</button>
+            </div>
+          </form>
+        </div>
+      </sections>
+    </main>
+    <footer>
+      <div class="container">
+        <img src="./img/logo_white.svg" alt="Frontend" />
+        <nav class="sitemap">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#curriculum">Curriculum</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <small class="copyright">©︎ 2022 Frontend Inc.</small>
+      </div>
+    </footer>
+  </body>
+</html>

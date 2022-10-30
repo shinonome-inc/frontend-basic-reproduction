@@ -1,0 +1,253 @@
+/* 全称セレクタを使って全ての要素に共通するスタイルを定義する */
+/* box-sizing: border-boxはborderを含めて要素のwidth,heightと解釈する設定 */
+/* h要素など一部の要素にはデフォルトでpaddingやmarginがついており、スタイリングの邪魔なので削除している */
+/* htmlで読み込んだフォントを適用する 意図通りのフォントが優先されるよう、記述する順番を意識する */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", "Noto Sans JP", sans-serif;
+}
+
+section {
+  margin-bottom: 80px;
+}
+
+/* 余白の管理に使う汎用クラス */
+/* 共通化することで、見通しが良くなったり、変更の際の手間が減る */
+.container {
+  margin: auto;
+  padding: 0 32px;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* ボタンのパーツに使う汎用クラス */
+.button {
+  display: block;
+  padding: 10px 0;
+  width: 160px;
+  background-color: #f5f5f5;
+  color: #000000;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color ease 0.2s;
+}
+
+/* 擬似クラスを使ってカーソルを合わせた時のスタイルを定義する */
+/* transitionをこっちに書くと、カーソルを合わせた時と外した時の挙動が変わってしまう */
+.button:hover {
+  color: #ffffff;
+  background-color: #333333;
+}
+
+/* ボタンというクラス名だが、リンクとしての機能しか持たない場合はa要素を使う */
+/* デフォルトで設定されている下線の削除 */
+a.button {
+  text-decoration: none;
+}
+
+/* デフォルトで設定されているボーダーの削除 */
+button.button {
+  border: none;
+}
+
+header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+
+/* widthだけ指定すれば縦横比を保ったままheightも変化する（逆もまた然り） */
+header a img {
+  width: 120px;
+}
+
+/* 背景画像の表示と中身の中央寄せ */
+.hero {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./img/hero.png");
+}
+
+.hero h1 {
+  color: #ffffff;
+  font-size: 32px;
+}
+
+/* 中身を横並びにする */
+section .explanation {
+  display: flex;
+}
+
+/* これがないとテキストの長さによって要素の幅が変わり、見た目が揃わない */
+section h2 {
+  min-width: 200px;
+}
+
+.curriculum .explanation {
+  margin-bottom: 80px;
+}
+
+/* gapを使ってflexアイテム同士の余白を制御する */
+.curriculum .cards {
+  display: flex;
+  column-gap: 40px;
+  margin-bottom: 80px;
+}
+
+/* flex: 1; でそれぞれのcardが等しく伸縮するようになる */
+.curriculum .card {
+  flex: 1;
+  border: #dddddd solid 1px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform ease 0.2s;
+}
+
+/* カーソルを合わせた時にフワッとする */
+.curriculum .card:hover {
+  transform: translateY(-4px);
+}
+
+/* 画像を親要素の幅いっぱいに固定する */
+.curriculum .card img {
+  width: 100%;
+}
+
+/* flex: 1;を設定することで、余白いっぱいに広がるようにしている */
+.curriculum .card .body {
+  flex: 1;
+  padding: 24px;
+  background-color: #f5f5f5;
+}
+
+.curriculum .card h3 {
+  margin-bottom: 8px;
+}
+
+/* 中央寄せ */
+.curriculum .button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.contact form {
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+.contact .input-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+/* カンマを用いて複数のセレクタに同じ宣言を適用する */
+.contact input,
+.contact textarea {
+  outline: none;
+  border: none;
+  padding: 12px;
+  background-color: #f5f5f5;
+}
+
+.contact .button-wrapper {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+footer {
+  padding: 24px 0;
+  background-color: #333333;
+}
+
+footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 24px;
+}
+
+footer img {
+  width: 120px;
+}
+
+footer a {
+  color: #dddddd;
+  text-decoration: none;
+}
+
+/* ul要素のデフォルトのスタイルを消す */
+footer nav ul {
+  display: flex;
+  list-style: none;
+}
+
+/* line-height: 1;を設定するとフォントの高さ＝要素の高さとなる */
+/* 区切りの | を表示する関係で、みためをスッキリさせるために記述している */
+footer nav li {
+  padding: 0 16px;
+  line-height: 1;
+}
+
+/* 区切りの | をborderで表現している */
+/* 最後の要素にだけ別のクラスを設定することでも表示を分けることが可能だが、擬似クラスを使うことで記述がシンプルになり、要素が増減しても対応が可能とになる */
+footer nav li:not(:last-child) {
+  border-right: #ffffff solid 1px;
+}
+
+/* smallタグは著作権表記に使われる */
+footer small {
+  color: #dddddd;
+}
+
+/* max-widthを用いてデスクトップファーストのレスポンシブ対応を行う */
+/* {} の中に書いたスタイルが、画面幅1023px以下の時に適用される */
+/* メディアクエリの外に書いたスタイルも引き続き適用される */
+/* そのため、セレクタの詳細度によってはメディアクエリの中のスタイルが優先されない場合がある */
+/* メディアクエリ自体に詳細度への影響はない */
+/* 詳細度が同じ場合は、CSSのカスケーディング（下のほうに書いたものが優先される規則）によって、これ以前に書いたスタイルを上書きできる */
+@media (max-width: 1024px) {
+  /* 見出しと本文を縦並びに */
+  section .explanation {
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  /* カードも縦並びに */
+  .curriculum .cards {
+    flex-direction: column;
+    row-gap: 40px;
+  }
+
+  /* フッターの中身を左に寄せる */
+  footer .container {
+    align-items: flex-start;
+  }
+
+  /* サイトマップを縦並びに */
+  /* 項目間はgapで調節 */
+  footer nav ul {
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  /* 縦並びにすることにより、paddingと区切り | が不要になる */
+  footer nav li {
+    padding: 0;
+  }
+
+  footer nav li:not(:last-child) {
+    border-right: 0;
+  }
+}
