@@ -1,3 +1,11 @@
+:root {
+  --color-accent: #ffffff;
+  --color-light: #dddddd;
+  --color-text: #000000;
+  --color-background-contrast: #f5f5f5;
+  --color-background-dark: #333333;
+}
+
 /* 全称セレクタを使って全ての要素に共通するスタイルを定義する */
 /* box-sizing: border-boxはborderを含めて要素のwidth,heightと解釈する設定 */
 /* h要素など一部の要素にはデフォルトでpaddingやmarginがついており、スタイリングの邪魔なので削除している */
@@ -31,8 +39,8 @@
   display: block;
   padding: 10px 0;
   width: 160px;
-  background-color: #f5f5f5;
-  color: #000000;
+  background-color: var(--color-background-contrast);
+  color: var(--color-text);
   text-align: center;
   font-size: 16px;
   cursor: pointer;
@@ -42,8 +50,8 @@
 /* 擬似クラスを使ってカーソルを合わせた時のスタイルを定義する */
 /* transitionをこっちに書くと、カーソルを合わせた時と外した時の挙動が変わってしまう */
 .button:hover {
-  color: #ffffff;
-  background-color: #333333;
+  color: var(--color-accent);
+  background-color: var(--color-background-dark);
 }
 
 /* ボタンというクラス名だが、リンクとしての機能しか持たない場合はa要素を使う */
@@ -61,7 +69,7 @@ button.button {
   height: 80px;
   display: flex;
   align-items: center;
-  background-color: #f5f5f5;
+  background-color: var(--color-background-contrast);
 }
 
 /* widthだけ指定すれば縦横比を保ったままheightも変化する（逆もまた然り） */
@@ -79,7 +87,7 @@ button.button {
 }
 
 .title {
-  color: #ffffff;
+  color: var(--color-accent);
   font-size: 32px;
 }
 
@@ -108,7 +116,7 @@ button.button {
 /* flex: 1; でそれぞれのcardが等しく伸縮するようになる */
 .curriculum-card {
   flex: 1;
-  border: #dddddd solid 1px;
+  border: var(--color-light) solid 1px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -130,7 +138,7 @@ button.button {
 .curriculum-card-body {
   flex: 1;
   padding: 24px;
-  background-color: #f5f5f5;
+  background-color: var(--color-background-contrast);
 }
 
 .curriculum-card-heading {
@@ -167,7 +175,7 @@ button.button {
   outline: none;
   border: none;
   padding: 12px;
-  background-color: #f5f5f5;
+  background-color: var(--color-background-contrast);
 }
 
 .contact-button-wrapper {
@@ -177,7 +185,7 @@ button.button {
 
 .footer {
   padding: 24px 0;
-  background-color: #333333;
+  background-color: var(--color-background-dark);
 }
 
 .footer-container {
@@ -192,7 +200,7 @@ button.button {
 }
 
 .footer-link {
-  color: #dddddd;
+  color: var(--color-light);
   text-decoration: none;
 }
 
@@ -212,12 +220,12 @@ button.button {
 /* 区切りの | をborderで表現している */
 /* 最後の要素にだけ別のクラスを設定することでも表示を分けることが可能だが、擬似クラスを使うことで記述がシンプルになり、要素が増減しても対応が可能とになる */
 .footer-list-item:not(:last-child) {
-  border-right: #ffffff solid 1px;
+  border-right: var(--color-accent) solid 1px;
 }
 
 /* smallタグは著作権表記に使われる */
 .copyright {
-  color: #dddddd;
+  color: var(--color-light);
 }
 
 /* max-widthを用いてデスクトップファーストのレスポンシブ対応を行う */
