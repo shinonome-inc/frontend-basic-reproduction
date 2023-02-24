@@ -15,28 +15,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap"
-    rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
     />
     <!-- 自作のスタイルシートの読み込み -->
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <header>
+    <header class="header">
       <div class="container">
         <a href="#top">
-          <img src="./img/logo_black.svg" alt="Frontend" />
+          <img src="./img/logo_black.svg" alt="Frontend" class="header-img" />
         </a>
       </div>
     </header>
-    <main>
+    <main class="main-layout">
       <section class="hero" id="hero">
         <h1 class="title">フロントエンドコース</h1>
       </section>
       <section class="about" id="about">
         <div class="container">
           <div class="explanation">
-            <h2>About</h2>
+            <h2 class="explanation-heading">About</h2>
             <p class="section-content">
               フロントエンドコースでは、webサイトやwebアプリにおいて実際にユーザーの目に触れる部分を作成する方法を学習していきます。<br />
               コース内では基本的な事項の紹介にとどめているので、早めに終了して個人開発や案件に挑戦してみてください。
@@ -45,19 +45,23 @@
         </div>
       </section>
       <section class="curriculum" id="curriculum">
-        <div class="container">
+        <div class="container curriculum-container">
           <div class="explanation">
-            <h2>Curriculum</h2>
+            <h2 class="explanation-heading">Curriculum</h2>
             <p class="section-content">
               webフロントエンドの基礎から、最新のUIライブラリまでを一通り学習します。<br />
               コースを修了すれば案件に挑戦する基礎的なスキルセットが身につくようになっています。
             </p>
           </div>
-          <div class="cards">
-            <div class="card">
-              <img src="./img/html.png" alt="html5のロゴ" />
-              <div class="body">
-                <h3>HTML & CSS</h3>
+          <div class="curriculum-cards">
+            <div class="curriculum-card">
+              <img
+                src="./img/html.png"
+                alt="html5のロゴ"
+                class="curriculum-card-img"
+              />
+              <div class="curriculum-card-body">
+                <h3 class="curriculum-card-heading">HTML & CSS</h3>
                 <p>
                   HTML（HyperText Markup
                   Language）は、webページの構造や内容を作るためのマークアップ言語です。<br />
@@ -67,10 +71,14 @@
                 </p>
               </div>
             </div>
-            <div class="card">
-              <img src="./img/github.png" alt="githubのロゴ" />
-              <div class="body">
-                <h3>Git & Github</h3>
+            <div class="curriculum-card">
+              <img
+                src="./img/github.png"
+                alt="githubのロゴ"
+                class="curriculum-card-img"
+              />
+              <div class="curriculum-card-body">
+                <h3 class="curriculum-card-heading">Git & Github</h3>
                 <p>
                   gitは、現在最も広く使われているバージョン管理ツールであり、
                   github は git
@@ -80,10 +88,14 @@
                 </p>
               </div>
             </div>
-            <div class="card">
-              <img src="./img/react.png" alt="reactのロゴ" />
-              <div class="body">
-                <h3>React</h3>
+            <div class="curriculum-card">
+              <img
+                src="./img/react.png"
+                alt="reactのロゴ"
+                class="curriculum-card-img"
+              />
+              <div class="curriculum-card-body">
+                <h3 class="curriculum-card-heading">React</h3>
                 <p>
                   Meta（旧facebook）によって開発されているJavascriptライブラリです。<br />
                   web上で動作する SPA(Single Page Application)
@@ -92,42 +104,66 @@
               </div>
             </div>
           </div>
-          <div class="button-wrapper">
+          <div class="curriculum-button-wrapper">
             <a href="#" class="button">もっと見る</a>
           </div>
         </div>
       </section>
       <section class="contact" id="contact">
-        <div class="container">
+        <div class="container contact-container">
           <h2>Contact</h2>
-          <form action="https://example.com" method="post">
-            <div class="title input-wrapper">
+          <form action="https://example.com" method="post" class="contact-form">
+            <div class="contact-input-wrapper">
               <label for="title">件名</label>
-              <input type="text" id="title" name="title" placeholder="定例会について"/>
+              <input
+                class="contact-input"
+                type="text"
+                id="title"
+                name="title"
+                placeholder="定例会について"
+              />
             </div>
-            <div class="mail input-wrapper">
+            <div class="contact-input-wrapper">
               <label for="mail">メールアドレス</label>
-              <input type="text" id="mail" name="mail" placeholder="example@gmail.com"/>
+              <input
+                class="contact-input"
+                type="text"
+                id="mail"
+                name="mail"
+                placeholder="example@gmail.com"
+              />
             </div>
-            <div class="content input-wrapper">
+            <div class="contact-input-wrapper">
               <label for="content">内容</label>
-              <textarea id="content" name="content" rows="5" placeholder="定例会の日にバイトが入っていて参加できそうにありません。"></textarea>
+              <textarea
+                class="contact-textarea"
+                id="content"
+                name="content"
+                rows="5"
+                placeholder="定例会の日にバイトが入っていて参加できそうにありません。"
+              ></textarea>
             </div>
-            <div class="button-wrapper">
+            <div class="contact-button-wrapper">
               <button type="submit" class="button">送信</button>
             </div>
           </form>
         </div>
-      </sections>
+      </section>
     </main>
-    <footer>
-      <div class="container">
-        <img src="./img/logo_white.svg" alt="Frontend" />
+    <footer class="footer">
+      <div class="container footer-container">
+        <img src="./img/logo_white.svg" alt="Frontend" class="footer-logo" />
         <nav class="sitemap">
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#curriculum">Curriculum</a></li>
-            <li><a href="#contact">Contact</a></li>
+          <ul class="footer-list">
+            <li class="footer-list-item">
+              <a href="#about" class="footer-link">About</a>
+            </li>
+            <li class="footer-list-item">
+              <a href="#curriculum" class="footer-link">Curriculum</a>
+            </li>
+            <li class="footer-list-item">
+              <a href="#contact" class="footer-link">Contact</a>
+            </li>
           </ul>
         </nav>
         <small class="copyright">©︎ 2022 Frontend Inc.</small>
