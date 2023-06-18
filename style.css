@@ -65,6 +65,7 @@ button.button {
   border: none;
 }
 
+/* flex-directionはデフォルトがrowなので、横並びにしたい時は単に display: flex; を指定するだけでよい */
 .header {
   height: 80px;
   display: flex;
